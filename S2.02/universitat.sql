@@ -76,8 +76,8 @@ order by persona.id asc;
 /*4-Retorna un llistat amb tots els departaments i el nombre de professors/es que hi ha en cadascun d'ells. Tingui en compte que poden existir departaments que no tenen professors/es associats. Aquests departaments també han d'aparèixer en el llistat.*/
 select departamento.nombre, persona.nombre from departamento;
 /*5-Retorna un llistat amb el nom de tots els graus existents en la base de dades i el nombre d'assignatures que té cadascun. Tingues en compte que poden existir graus que no tenen assignatures associades. Aquests graus també han d'aparèixer en el llistat. El resultat haurà d'estar ordenat de major a menor pel nombre d'assignatures.*/
-select  grado.nombre, count(asignatura.nombre) from asignatura
-left join grado on asignatura.id_grado=grado.id
+select  grado.nombre as grado, count(asignatura.nombre) as asignatura from asignatura
+right join grado on asignatura.id_grado=grado.id
 group by grado.nombre;
 /*10-Retorna totes les dades de l'alumne/a més jove.*/
 select * from persona where fecha_nacimiento = (select max(fecha_nacimiento) from persona);
