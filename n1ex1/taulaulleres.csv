@@ -1,0 +1,4 @@
+idUlleres,Marca,Graduacio_vidre_dret,Graduacio_vidre_esquerra,Tipus_Muntura,Color_vidre,Color_Muntura,Preu,Proveidor_idProveidor
+1,marca1,1,1,flotant,negre,negre,50,1
+2,marca2,1,1,metalica,verd,marro,60,2
+3,marca3,1,0,pasta,blau,negre,70,3
