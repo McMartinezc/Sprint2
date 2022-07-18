@@ -1,1 +1,11 @@
+DIAGRAMA OPTICA
+
+El diagrama està format per 4 taules. La taula Ulleres, taula proveïdor, taula client i per últim la taula client_venta_ulleres aquesta surt de la relació entre client i ulleres.
+
+La taula ulleres, és una entitat forta i consta d'una primary key = idUlleres i una Foreign Key = Proveidor_idProveidor.
+La relació entre la taula Ulleres i taula Proveïdor és de N:1, ja que 1 proveïdor pot subministrar diverses (N) marques d'ulleres.
+
+Entre la taula ulleres i taula client com que la relació és de N:M perquè diversos clients poden comprar diverses ulleres s'ha creat una taula intermèdia, on trobem Foreign keys de Client_idClient i Ulleres_idUlleres. A més hem afegit dos atributs més com data_venta i num_factura per poder fer la consulta de la data de venda i el número de factura.
+
+Per últim, tenim la taula client, la qual està relacionada amb la ja esmentada taula ulleres per la relació tipus (N:M), també tenim una relació pròpia d'un client pot recomanar a diversos clients, per tant, serà una relació 1:N dins de la mateixa taula.
 
