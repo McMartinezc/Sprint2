@@ -1,1 +1,10 @@
+El diagrama de la pizzeria consta de 9 taules.
 
+La taula client, està relacionada amb la taula localitat (N:1), diversos clients poden ser d'una localitat aquesta serà entitat forta. La taula localitat, té com entitat dèbil província i és de relació (N:1), diverses localitats formen part d'una província.
+La taula client, està relacionada amb comanda (1:N), ja que un client pot fer diverses comandes.
+
+La taula comanda, està relacionada amb producte (N:M), perquè una comanda pot tenir diversos productes, i diversos productes poden formar part de diverses comandes. D'aquí surt la taula comanda_producte.
+Des de la taula comanda, té relació (N:1) a la taula botiga, pel fet que moltes comandes seran gestionades per una botiga.
+A la taula botiga, té relació (1:N) amb la taula localitat, ja que hem considerat que una botiga pot estar en diverses localitats.
+També la taula botiga, té una relació amb taula empleat (1:N) perquè una botiga pot tenir diversos empleats, però un empleat en concret formarà part d'una botiga, a més l'entitat, empleat és una entitat dèbil perquè no existeixen empleats si no hi ha botiga.
+La taula producte, és una entitat forta i té una relació amb categoria_pizza de (N:1), podem tenir diversos productes tipus pizza que formen part d'una categoria pizza.
