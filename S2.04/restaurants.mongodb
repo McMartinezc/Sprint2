@@ -20,13 +20,13 @@ db.restaurant.find({'grades.score': {$gt :90}});
 //9.Escriu una consulta per trobar els restaurants que tenen un score de més de 80 però menys que 100.
 db.restaurant.find({'grades.score' : {$gt: 80, $lt: 100}});
 //10.Escriu una consulta per trobar els restaurants que es localitzen en valor de latitud menys de -95.754168.
-
+db.restaurant.find({'address.coord':{$lte:-95.754168}});
 //11.Escriu una consulta de MongoDB per a trobar els restaurants que no preparen cap cuisine de 'American' i la seva qualificació és superior a 70 i longitud inferior a -65.754168.
-
+db.restaurant.find({cuisine:{$ne:'American '},'grades.score':{$gt:70},'address.coord': {$lt:-65.754168}});
 //12.Escriu una consulta per trobar els restaurants que no preparen cap cuisine de 'American' i van aconseguir un marcador més de 70 i localitzat en la longitud menys que -65.754168. Nota: Fes aquesta consulta sense utilitzar $and operador.
 
 //13.Escriu una consulta per trobar els restaurants que no preparen cap cuisine de 'American' i van obtenir un punt de grau 'A' no pertany a Brooklyn. S'ha de mostrar el document segons la cuisine en ordre descendent.
-
+db.restaurant.find({cuisine:{$ne:'American '},'grades.grade':"A", borough:{$ne:'Brooklyn'}});
 //14.Escriu una consulta per trobar el restaurant_id, name, borough i cuisine per a aquells restaurants que contenen 'Wil' com les tres primeres lletres en el seu nom
 
 //15.Escriu una consulta per trobar el restaurant_id, name, borough i cuisine per a aquells restaurants que contenen 'ces' com les últimes tres lletres en el seu nom.
