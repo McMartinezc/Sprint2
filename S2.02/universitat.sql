@@ -17,9 +17,9 @@ select nombre, id_grado, cuatrimestre from asignatura
 where id_grado = 7 and cuatrimestre = 1 and curso=3;
 /*6-Retorna un llistat dels professors/es juntament amb el nom del departament al qual estan vinculats. El llistat ha de retornar quatre columnes, primer cognom, segon cognom, nom i nom del departament. El resultat estarà ordenat alfabèticament de menor a major pels cognoms i el nom.*/
 select persona.apellido1, persona.apellido2, persona.nombre, departamento.nombre from persona
-inner join profesor on persona.id= profesor.id_profesor
-inner join departamento on profesor.id_profesor= departamento.id
-where persona.tipo='profesor'
+inner join profesor on profesor.id_profesor=persona.id 
+inner join departamento on profesor.id_departamento= departamento.id
+where tipo ='profesor'
 order by persona.apellido1, persona.apellido2, persona.nombre asc;
 /*7-Retorna un llistat amb el nom de les assignatures, any d'inici i any de fi del curs escolar de l'alumne/a amb NIF 26902806M.*/
 select persona.nombre, persona.nif, asignatura.nombre, curso_escolar.anyo_inicio, curso_escolar.anyo_fin from persona
