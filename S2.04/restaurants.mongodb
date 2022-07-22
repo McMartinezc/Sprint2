@@ -41,7 +41,7 @@ db.restaurant.find({cuisine: {$ne: "American "}, 'grades.score': {$gt: 70}, 'add
 db.restaurant.find({cuisine:{$ne:'American '},'grades.grade':"A", borough:{$ne:'Brooklyn'}}).sort({cuisine:-1});
 
 //14.Escriu una consulta per trobar el restaurant_id, name, borough i cuisine per a aquells restaurants que contenen 'Wil' com les tres primeres lletres en el seu nom
-db.restaurant.find({"name": /Wil/}, {restaurant_id: 1, name : 1, borough: 1, cuisine: 1, _id: 0});
+db.restaurant.find({name: {$regex:/^Wil/}}, {restaurant_id: 1, name : 1, borough: 1, cuisine: 1, _id: 0});
 
 //15.Escriu una consulta per trobar el restaurant_id, name, borough i cuisine per a aquells restaurants que contenen 'ces' com les últimes tres lletres en el seu nom.
 db.restaurant.find({"name": /ces$/}, {restaurant_id: 1, name : 1, borough: 1, cuisine: 1, _id: 0});
